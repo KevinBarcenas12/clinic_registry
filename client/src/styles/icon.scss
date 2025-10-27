@@ -1,0 +1,13 @@
+@use "./vars";
+
+.icon {
+    stroke: currentColor;
+    fill: currentColor;
+    color: currentColor;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    margin: -.125em;
+    width: vars.getSize(1);
+    aspect-ratio: 1/1;
+}

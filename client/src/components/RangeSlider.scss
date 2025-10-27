@@ -1,0 +1,100 @@
+@use "../styles/vars";
+
+.double-slider {
+    width: 100%;
+    height: vars.getSize(2.75);
+    display: grid;
+    place-items: center;
+    background-color: vars.$color-alt-foreground;
+    border: vars.getSize(.125) vars.$color-accent-foreground solid;
+    border-radius: vars.getSize(.5);
+    position: relative;
+    margin-top: vars.getSize(1);
+
+    .slider-bg {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        left: 0;
+        top: 0;
+        grid-column: 1;
+        grid-row: 1;
+        background-color: vars.$color-alt-foreground;
+        border-radius: vars.getSize(.5);
+    }
+
+    .slider {
+        position: relative;
+        width: calc(100% - vars.getSize(2));
+        height: 100%;
+        top: 0;
+        left: 0;
+        grid-column: 1;
+        grid-row: 1;
+        display: grid;
+        place-items: center;
+
+        .slider-track,
+        .slider-range {
+            height: vars.getSize(.5);
+            position: absolute;
+            border-radius: vars.getSize(.5);
+            width: 100%;
+        }
+
+        .slider-track {
+            background-color: vars.$color-accent-text;
+        }
+
+        .slider-range {
+            background-color: vars.$color-accent-foreground;
+        }
+
+    }
+
+    .range {
+        position: absolute;
+        pointer-events: none;
+        grid-column: 1;
+        grid-row: 1;
+        width: calc(100% - vars.getSize(1.5));
+        margin-inline: vars.getSize(1);
+
+        &::-webkit-slider-thumb,
+        &::-moz-range-thumb {
+            position: relative;
+            width: vars.getSize(.8);
+            height: vars.getSize(.8);
+            border-radius: 50%;
+            background-color: vars.$color-accent-foreground;
+            pointer-events: all;
+            // z-index: 2;
+            border: none;
+        }
+    }
+
+    .title-handle {
+        position: absolute;
+        top: vars.getSize(-1 + .125);
+        left: vars.getSize(.75 + .125 / 2);
+        background-color: vars.$color-alt-foreground;
+        color: vars.$color-alt-text;
+        padding: vars.getSize(.1) vars.getSize(.25);
+        border-radius: vars.getSize(2);
+        white-space: nowrap;
+    }
+
+    .title_bg {
+        position: absolute;
+        color: transparent;
+        top: vars.getSize(-.95);
+        left: vars.getSize(.75 - .125 / 2);
+        background-color: vars.$color-alt-foreground;
+        color: vars.$color-alt-text;
+        padding: vars.getSize(.1) vars.getSize(.25);
+        border-radius: vars.getSize(2);
+        border: vars.getSize(.125) solid vars.$color-accent-foreground;
+        z-index: 0;
+        white-space: nowrap;
+    }
+}

@@ -1,0 +1,88 @@
+@use "./vars";
+
+.input_container {
+    position: relative;
+    color: vars.$color-main-text;
+    width: 100%;
+    height: vars.getSize(2.75);
+    margin-top: vars.getSize(.85);
+
+    &.title_inline .input_content {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: vars.getSize(.125);
+
+        .icon {
+            width: auto;
+            aspect-ratio: 1/1;
+            height: 60%;
+            align-self: center;
+            color: vars.$color-accent-foreground;
+        }
+
+        select {
+            border: none;
+            appearance: none;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            font-size: vars.getSize(1);
+            outline: none;
+            background: transparent;
+            flex-grow: 1;
+            cursor: pointer;
+            text-align: center;
+        }
+    }
+
+    &:not(.title_inline) {
+        &.empty .input_title,
+        &.empty .input_title_bg {
+            top: 50%;
+            left: vars.getSize(.4);
+            transform: translate(0, -52%);
+        }
+    }
+
+    .input_content {
+        width: 100%;
+        height: 100%;
+        font-size: vars.getSize(.5);
+        border: solid vars.getSize(.125) vars.$color-accent-foreground;
+        background-color: vars.$color-alt-foreground;
+        border-radius: vars.getSize(.75);
+        padding: vars.getSize(.125) vars.getSize(.5);
+        text-align: center;
+    }
+
+    input {
+        width: 100%;
+        height: 100%;
+        
+        font-size: vars.getSize(1);
+    }
+    .input_title {
+        position: absolute;
+        top: vars.getSize(-1 + .125);
+        left: vars.getSize(.75 + .125 / 2);
+        font-size: vars.getSize(1);
+        background-color: vars.$color-alt-foreground;
+        color: vars.$color-alt-text;
+        transition: all 400ms ease;
+        padding: vars.getSize(.1) vars.getSize(.25);
+        border-radius: vars.getSize(2);
+
+        &_bg {
+            position: absolute;
+            font-size: vars.getSize(1);
+            top: vars.getSize(-.95);
+            left: vars.getSize(.75 - .125 / 2);
+            background-color: vars.$color-accent-foreground;
+            color: vars.$color-alt-text;
+            transition: all 400ms ease;
+            padding: vars.getSize(.1) vars.getSize(.25);
+            border-radius: vars.getSize(2);
+            color: transparent;
+            border: vars.getSize(.125) solid vars.$color-accent-foreground;
+        }
+    }
+}

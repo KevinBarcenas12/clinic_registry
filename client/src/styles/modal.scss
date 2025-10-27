@@ -1,0 +1,34 @@
+@use "./vars";
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: vars.$cover-color;
+    display: grid;
+    place-items: center;
+
+    .modal-message {
+        background-color: white;
+        padding: 2em 4em;
+        border-radius: 1em;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+
+        .button {
+            width: max-content;
+            margin-inline: auto;
+            display: flex;
+            flex-direction: row;
+            gap: .125em;
+            align-items: center;
+
+            .icon {
+                font-size: 1.5em;
+            }
+        }
+    }
+}

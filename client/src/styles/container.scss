@@ -1,0 +1,22 @@
+@use "./vars";
+
+.container {
+    width: 100%;
+    // height: vars.$full-height;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    padding: vars.getSize(1);
+    position: relative;
+
+    .container-content {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        // overflow-y: auto;
+        background: vars.$color-main-foreground;
+        color: vars.$color-main-text;
+        padding: vars.getSize(2);
+        border-radius: vars.getSize(1);
+    }
+}

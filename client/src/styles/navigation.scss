@@ -1,0 +1,42 @@
+@use "./vars";
+
+.navigation-bar {
+  height: vars.$nav-height;
+  width: 100%;
+  background-color: vars.$nav-background;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  gap: vars.getSize(1);
+  align-items: center;
+  justify-content: flex-end;
+  padding: vars.getSize(1);
+  z-index: 10;
+  position: relative;
+
+  .profile-links-container {
+    width: vars.getSize(15);
+    min-height: vars.getSize(5);
+    max-height: vars.getSize(25);
+    background: white;
+    color: vars.$color-main-text;
+    display: flex;
+    flex-direction: column;
+    gap: vars.getSize(.5);
+    position: absolute;
+    right: 50%;
+    top: 120%;
+    padding: vars.getSize(.5);
+    .link {
+      font-size: vars.getSize(1);
+    }
+  }
+
+  .user-info {
+    font-size: vars.getSize(1);
+
+    span {
+      white-space: nowrap;
+    }
+  }
+}

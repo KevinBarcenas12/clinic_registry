@@ -1,0 +1,69 @@
+@use "../../styles/vars";
+
+.appointment-list {
+    &.main-container {
+        height: vars.$full-height;
+        width: 100%;
+        overflow-y: auto;
+
+        .container-content {
+            width: calc(100% - vars.getSize(2));
+            height: calc(100% - vars.getSize(2));
+            position: absolute;
+            top: vars.getSize(1);
+            left: vars.getSize(1);
+            row-gap: vars.getSize(2);
+            column-gap: vars.getSize(1);
+            display: grid;
+            grid-template-columns: 1fr 2.5fr;
+            grid-template-rows: vars.getSize(1.5) vars.getSize(4) 1fr;
+        }
+    }
+
+    h2 {
+        grid-column: span 2;
+    }
+
+    .filters {
+        grid-column: span 2;
+        display: grid;
+        grid-template-columns: 1fr 1fr .5fr;
+        gap: vars.getSize(1);
+    }
+
+    .links {
+        grid-column: span 3;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .appointments {
+        padding: vars.getSize(1);
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: vars.getSize(1);
+        background-color: hsl(0 100 0 / .025);
+        border-radius: vars.getSize(.5);
+
+        .appointment {
+            display: grid;
+            font-size: vars.getSize(1);
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            padding: vars.getSize(.5);
+            box-shadow: vars.getSize(.125) vars.getSize(.125) vars.getSize(.5) vars.$cover-color;
+            border-radius: vars.getSize(.5);
+
+            .appointment-date {
+                grid-column: span 3;
+            }
+            .appointment-medic_name {
+                grid-column: span 2;
+            }
+            .appointment-user_name {
+                grid-column: span 2;
+            }
+        }
+    }
+}

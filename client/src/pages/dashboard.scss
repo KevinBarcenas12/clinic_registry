@@ -1,0 +1,115 @@
+@use "../styles/vars";
+
+.dashboard {
+    width: 100%;
+    height: 100%;
+    background-color: vars.$color-main-foreground;
+
+    .container {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+        position: relative;
+        align-content: start;
+
+        .container-content {
+            width: 90%;
+            height: max-content;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .user-info {
+        width: 100%;
+        height: vars.getSize(8);
+        // background-color: red;
+        margin-bottom: vars.getSize(.5);
+    }
+
+    .user-references {
+        width: 100%;
+        // height: vars.getSize(30);
+        min-height: vars.getSize(20);
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: vars.getSize(.5);
+        align-content: start;
+
+        .appointment-list,
+        .chat-list,
+        .user-list,
+        .history-info {
+            display: flex;
+            flex-direction: column;
+            gap: vars.getSize(.5);
+            padding: vars.getSize(.5);
+
+            .reference {
+                position: relative;
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column-reverse;
+            }
+        }
+
+        .chat,
+        .appointment,
+        .user {
+            padding: vars.getSize(.7);
+            border-radius: vars.getSize(.5);
+            background-color: hsl(0 100 0 / .05);
+            display: grid;
+        }
+
+        .appointment-list {
+            .appointment {
+                grid-template-columns: 1fr 2fr;
+                
+                .appointment-medic_name {
+                    grid-column: span 2;
+                }
+
+                .appointment-diagnose {
+                    grid-column: span 2;
+                }
+            }
+        }
+
+        .chat-list {
+            .chat {
+                grid-template-columns: 1fr 1fr 1fr;
+
+                .chat-medic_name {
+                    grid-column: span 2;
+                }
+
+                .chat-created_at {
+                    grid-column: span 2;
+                }
+            }
+        }
+
+        .user-list {
+            .user {
+                grid-template-columns: 1fr 1fr;
+
+                .user-registered_at {
+                    grid-column: span 2;
+                }
+            }
+        }
+
+        .request-appointment {
+            grid-column: 2;
+        }
+    }
+    
+    .references {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        place-items: center;
+    }
+}

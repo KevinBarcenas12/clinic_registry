@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+      "target": "es5",
+      "lib": [
+        "dom",
+        "dom.iterable",
+        "esnext"
+      ],
+      "allowJs": true,
+      "skipLibCheck": true,
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "strict": true,
+      "forceConsistentCasingInFileNames": true,
+      "noFallthroughCasesInSwitch": true,
+      "module": "esnext",
+      "moduleResolution": "node",
+      "resolveJsonModule": true,
+      "isolatedModules": true,
+      "noEmit": true,
+      "jsx": "react-jsx"
+    },
+    "include": [
+      "src"
+, "src/_pages/dashboard", "src/_pages/src/_pages/appointments.tsxentssrc/_pages/chat.tsxchat.tsx", "src/_pasrc/_pages/contact.tsx/consrc/_pages/login.tsxes/lsrc/_pages/misionvision.tsxonvisrc/_pages/pagelist.ts/pagsrc/_pages/predictivediagnose.tsxdiagnose.tsx", "../_components"    ]
+}

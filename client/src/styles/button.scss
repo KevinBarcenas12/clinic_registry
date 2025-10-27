@@ -1,0 +1,34 @@
+@use "./vars";
+
+.button {
+    padding: vars.getSize(.75);
+    background-color: vars.$color-alt-foreground;
+    color: vars.$color-alt-text;
+    font-weight: 800;
+    border-radius: vars.getSize(.75);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    transition: 300ms ease;
+
+    &[disabled] {
+        background-color: red;
+        color: white;
+        cursor: not-allowed;
+    }
+
+    .icon {
+        display: inline-block;
+    }
+
+    &.icon-only {
+        border-radius: 50%;
+        aspect-ratio: 1/1;
+
+        .icon {
+            width: 150%;
+            height: 150%;
+        }
+    }
+}

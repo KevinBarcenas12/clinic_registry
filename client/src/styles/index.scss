@@ -1,0 +1,227 @@
+@use "./vars.scss" as vars;
+@import url(https://fonts.googleapis.com/css2?family=Poppins&display=swap);
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    Fira Sans,
+    Droid Sans,
+    Helvetica Neue,
+    sans-serif,
+    'Poppins';
+  overflow: hidden;
+  min-width: 400px;
+  min-height: 540px;
+  font-size: vars.getSize(1);
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  min-width: 300px;
+  overflow-x: auto;
+}
+
+code {
+  font-family:
+    source-code-pro,
+    Menlo,
+    Monaco,
+    Consolas,
+    Courier New,
+    monospace;
+}
+
+*,
+:after,
+:before {
+  -ms-overflow-style: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scrollbar-width: none;
+  position: relative;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+span {
+  display: inline-block;
+}
+
+button,
+input {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+// .icon {
+//   width: 100%;
+//   height: 100%;
+// }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: center
+}
+
+
+/* Contenedor principal */
+.home-section {
+  display: flex;
+  flex-direction: column;
+  gap: vars.getSize(4);
+  overflow-y: auto;
+  height: vars.$full-height;
+  background-color: vars.$color-main-foreground;
+  padding: 5em;
+  padding-top: 50vh;
+
+  /* Sección superior - Misión/Visión */
+  .mission-vision-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: vars.getSize(2);
+    place-items: center;
+
+    /* Imagen de fondo izquierda */
+    .mission-image,
+    .vision-image {
+      background-size: cover;
+      background-position: center;
+      display: block;
+      height: 20em;
+      width: 100%;
+    }
+    .mission-image {
+      background-image: url('../../public/assets/images/MisionVision2.jpg');
+    }
+    .vision-image {
+      background-image: url('../../public/assets/images/Contact.jpg');
+    }
+
+    /* Contenido Misión/Visión */
+    .mission-content,
+    .vision-content {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: vars.getSize(2);
+      border-radius: 8px;
+    }
+  }
+
+  /* Sección inferior - Contacto */
+  .contact-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: vars.getSize(2);
+
+    /* Contenido de Contacto */
+    .contact-content {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: vars.getSize(2);
+      border-radius: 8px;
+
+      h3 {
+        margin-bottom: vars.getSize(1);
+      }
+
+      span {
+        display: block;
+        margin-bottom: vars.getSize(.5);
+      }
+    }
+
+    /* Imagen de fondo derecha */
+    .contact-image {
+      background-image: url('../../public/assets/images/Contact.jpg');
+      background-size: cover;
+      background-position: center;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to left, rgba(0,0,0,0.2), rgba(0,0,0,0.4));
+        pointer-events: none;
+      }
+    }
+  }
+  .schedule-content {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: vars.getSize(2);
+    border-radius: 8px;
+  }
+  .location-content {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: vars.getSize(2);
+    border-radius: 8px;
+  }
+  .socials-content {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: vars.getSize(2);
+    border-radius: 8px;
+  }
+}
+
+  /* Diseño responsivo */
+@media screen and (max-width: 768px) {
+  .home-container {
+    .mission-vision-section,
+    .contact-section {
+      grid-template-columns: 1fr;
+
+      .mission-image,
+      .contact-image {
+        height: 300px;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+@import url("./container.scss");
+@import url("./input.scss");
+@import url("./icon.scss");
+@import url("./link.scss");
+@import url("./modal.scss");
+@import url("./button.scss");
+@import url("./loading.scss");
+@import url("./cover.scss");
+@import url("./navigation.scss");
+@import url("./chat.scss");

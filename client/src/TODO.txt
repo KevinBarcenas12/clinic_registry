@@ -1,0 +1,24 @@
+-- TODO --
+inicio || login
+nombre de la página
+Misión || Visión
+Información de Contacto
+Chatbot (Se puede omitir hasta la ultima entrega)
+Análisis Predictivo (Se puede omitir hasta la ultima entrega)
+- admin 
+    - ver/editar centros de salud
+    - ver/editar informacion de usuarios existentes
+    - ver/editar expedientes de los pacientes
+    - ver/asignar chats pendientes
+    - ver el modulo de registro
+- medico
+    - ver centros de salud activos
+    - ver informacion de los usuarios existentes
+    - ver/editar expedientes de los pacientes
+    - ver/asignar chats pendientes
+    - ver/reagendar citas agendadas
+- paciente
+    - ver informacion del usuario activo
+    - ver expediente del usuario activo
+    - ver citas agendadas para el usuario activo
+    - ver historial de chats
