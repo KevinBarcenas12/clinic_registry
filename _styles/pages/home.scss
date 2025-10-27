@@ -1,0 +1,109 @@
+@use "../vars" as vars;
+
+$primary-color: #333;
+$secondary-color: #666;
+$text-color: #222;
+$background-color: #fff;
+$spacing-unit: 1rem;
+
+/* Contenedor principal */
+.home-section {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-unit * 4;
+  overflow-y: auto;
+  height: vars.$full-height;
+  background-color: vars.$color-main-foreground;
+  // padding-top: vars.$full-height;
+  padding: 5em;
+  padding-top: 50vh;
+
+  /* Sección superior - Misión/Visión */
+  .mission-vision-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-unit * 2;
+    place-items: center;
+
+    /* Imagen de fondo izquierda */
+    .mission-image,
+    .vision-image {
+      background-size: cover;
+      background-position: center;
+      display: block;
+      height: 20em;
+      width: 100%;
+    }
+    .mission-image {
+      background-image: url('../../../public/assets/images/MisionVision2.jpg');
+    }
+    .vision-image {
+      background-image: url('../../../public/assets/images/Contact.jpg');
+    }
+
+    /* Contenido Misión/Visión */
+    .mission-content,
+    .vision-content {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: $spacing-unit * 2;
+      border-radius: 8px;
+    }
+  }
+
+  /* Sección inferior - Contacto */
+  .contact-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-unit * 2;
+
+    /* Contenido de Contacto */
+    .contact-content {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: $spacing-unit * 2;
+      border-radius: 8px;
+
+      h3 {
+        margin-bottom: $spacing-unit;
+      }
+
+      span {
+        display: block;
+        margin-bottom: $spacing-unit * 0.5;
+      }
+    }
+
+    /* Imagen de fondo derecha */
+    .contact-image {
+      // background-image: url('../../../public/assets/images/Contact.jpg');
+      background-size: cover;
+      background-position: center;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to left, rgba(0,0,0,0.2), rgba(0,0,0,0.4));
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+  /* Diseño responsivo */
+@media screen and (max-width: 768px) {
+  .home-container {
+    .mission-vision-section,
+    .contact-section {
+      grid-template-columns: 1fr;
+
+      .mission-image,
+      .contact-image {
+        height: 300px;
+        overflow: hidden;
+      }
+    }
+  }
+}  

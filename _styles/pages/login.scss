@@ -1,0 +1,25 @@
+@use "../vars" as vars;
+
+#login {
+    background: url('../../../public/assets/images/background-image.jpg');
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    place-items: center;
+
+    form {
+        border-radius: .5em;
+        width: fit-content;
+        max-width: 95%;
+        background: vars.$color-main-foreground;
+        padding: 3em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+        
+        img { margin-bottom: 2em; mix-blend-mode: color-burn; }
+    }
+}

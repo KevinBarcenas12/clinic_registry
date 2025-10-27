@@ -1,0 +1,126 @@
+@use "../vars" as vars;
+
+.dashboard {
+    display: grid;
+    place-items: center;
+
+    .container {
+        background: hsl(0 100 0 / .025);
+        padding: 1em;
+        border-radius: 1em;
+        gap: 1em;
+
+        > div {
+            background: hsl(0 100 0 / .025);
+        }
+
+        .user_info {
+            display: grid;
+            justify-content: center;
+            place-items: center;
+            grid-row: span 2;
+
+            .info_container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                column-gap: .5em;
+                row-gap: .25em;
+
+                a {
+                    align-self: center;
+                }
+                > .label {
+                    width: 100%;
+                    justify-content: center;
+
+                    &:nth-child(1) {
+                        grid-column: span 2;
+                    }
+    
+                    .sublabel {
+                        width: max-content;
+                        flex-grow: 0;
+                    }
+                }
+
+                .actions {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-evenly;
+                    grid-column: span 2;
+                }
+
+                .label_container {
+                    display: inline-block;
+                    .label {
+                        padding: .5em;
+                        border-radius: .25em;
+                        background-color: hsl(0 100 0 / .075);
+                    }
+                }
+            }
+
+            > span {
+                // background-color: hsl(0 100 0 /.125);
+                padding: .125em;
+                display: flex;
+                flex-direction: row;
+                gap: .25em;
+                border: 1px black solid;
+                > span {
+                    flex-grow: 1;
+                    justify-content: center;
+                }
+            }
+        }
+
+        .user_list {
+            .filters {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .chat_list,
+        .appointment_list {
+            padding: 1em;
+
+            .cover_container {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        $gap: 1.2em;
+
+        .edit_user {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: $gap;
+            padding: $gap / 1.5;
+
+            .label {
+                padding: 0.5em;
+                border-radius: 0.25em;
+                background-color: hsla(0, 100%, 0%, 0.075);
+                font-size: 1em;
+            }
+
+            .location {
+                grid-column: span 2;
+            }
+
+            .dob_edit {
+                grid-column: span 2;
+                display: flex;
+                flex-direction: row;
+                gap: $gap;
+            }
+
+            h2 {
+                grid-column: span 2;
+                text-align: center;
+            }
+        }
+    }
+}
